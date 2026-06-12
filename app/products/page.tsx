@@ -34,6 +34,8 @@ const fetcher = async (
   console.log("PRODUCT API:", res.data);
 
   return {
+    success: true,
+    message: "Success",
     data: res.data.data || [],
     pagination: res.data.pagination || null,
   };
@@ -225,7 +227,7 @@ export default function ProductsPage() {
 
             {/* PAGINATION */}
             {pagination &&
-              pagination.total_pages > 1 && (
+              pagination.total > 1 && (
 
                 <div
                   className="
@@ -270,21 +272,21 @@ export default function ProductsPage() {
                     Halaman{" "}
                     {pagination.current_page}{" "}
                     dari{" "}
-                    {pagination.total_pages}
+                    {pagination.total}
                   </div>
 
                   <button
                     onClick={() =>
                       setCurrentPage((p) =>
                         Math.min(
-                          pagination.total_pages,
+                          pagination.total,
                           p + 1
                         )
                       )
                     }
                     disabled={
                       currentPage ===
-                      pagination.total_pages
+                      pagination.total
                     }
                     className="
                       btn-secondary

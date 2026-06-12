@@ -54,7 +54,7 @@ export default function DashboardPage() {
   const orders = ordersData?.data || [];
 
   const totalOrders =
-    ordersData?.pagination.total_items || 0;
+    ordersData?.pagination.total || 0;
 
   const completedOrders = orders.filter(
     (o) => o.status === "completed"

@@ -35,8 +35,8 @@ export default function SellerDashboardPage() {
 
   if (!isMounted) return null;
 
-  const totalProducts = productsData?.pagination.total_items || 0;
-  const totalOrders = ordersData?.pagination.total_items || 0;
+  const totalProducts = productsData?.pagination.total || 0;
+  const totalOrders = ordersData?.pagination.total || 0;
 
   const pendingOrders =
     ordersData?.data?.filter((o) => o.status === "pending_payment").length || 0;
