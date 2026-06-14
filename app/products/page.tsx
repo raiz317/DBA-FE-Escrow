@@ -25,9 +25,8 @@ import {
 /**
  * FETCHER
  */
-const fetcher = async (
-  url: string
-): Promise<PaginatedResponse<Product>> => {
+const fetcher = async (url: string) => {
+  console.log("FETCHER DIPANGGIL:", url);
 
   const res = await apiClient.get(url);
 
