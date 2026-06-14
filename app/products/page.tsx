@@ -25,12 +25,15 @@ import {
 /**
  * FETCHER
  */
-const fetcher = async (url: string) => {
-  console.log("FETCHER DIPANGGIL:", url);
+const fetcher = async (
+  url: string
+): Promise<PaginatedResponse<Product>> => {
+
+  console.log("FETCH URL =", url);
 
   const res = await apiClient.get(url);
 
-  console.log("PRODUCT API:", res.data);
+  console.log("PRODUCT API =", res.data);
 
   return {
     success: true,
