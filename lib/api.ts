@@ -2,6 +2,7 @@ import axios, { AxiosInstance, AxiosError } from "axios";
 import { ApiError } from "@/types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+console.log("API_URL =", API_URL);
 
 // Create axios instance
 export const apiClient: AxiosInstance = axios.create({
